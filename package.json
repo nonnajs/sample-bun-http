@@ -1,0 +1,33 @@
+{
+    "name": "@nonnajs/sample-bun-http",
+    "version": "1.0.0",
+    "description": "Bun HTTP server sample using @nonnajs/di and Bun.serve",
+    "author": "Manuel Santos <ney.br.santos@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "keywords": [
+        "nonna",
+        "di",
+        "injector",
+        "bun",
+        "http",
+        "sample"
+    ],
+    "main": "src/index.ts",
+    "types": "src/index.ts",
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "clean:build": "rimraf ./dist",
+        "lint": "eslint . --ext .js,.ts",
+        "lint:fix": "pnpm lint --fix",
+        "format": "prettier --check .",
+        "format:fix": "prettier --write .",
+        "test": "node --test --test-reporter node-test-reporter --require ts-node/register test/**/*.{test,it.test}.ts",
+        "test:bun": "bun test test/",
+        "tsc": "tsc",
+        "start": "bun run src/index.ts"
+    },
+    "dependencies": {
+        "@nonnajs/di": "workspace:*"
+    }
+}
